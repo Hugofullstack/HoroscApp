@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 
 }
 
@@ -51,6 +52,11 @@ dependencies {
     //DaggerHilt
     implementation(libs.hilt.android)
     kapt(libs.dagger.hilt.compiler)
+
+    //Retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
