@@ -21,4 +21,6 @@
     <string name="aquarius">Aquarius</string>
     <string name="pisces">Pisces</string>
     <string name="titulo">Titulo</string>
+    <string name="ruleta">Ruleta</string>
+    <string name="buttomback">ButtomBack</string>
 </resources>

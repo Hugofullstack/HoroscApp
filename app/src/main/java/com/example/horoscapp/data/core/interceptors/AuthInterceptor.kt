@@ -1,10 +1,10 @@
-package com.example.horoscapp.data.providers.core.interceptors
+package com.example.horoscapp.data.core.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject
 
-class AuthInterceptor @Inject constructor(private val tokenManager: tokenManager) : Interceptor {
+class AuthInterceptor @Inject constructor(private val tokenManager: TokenManager) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request =
@@ -14,6 +14,6 @@ class AuthInterceptor @Inject constructor(private val tokenManager: tokenManager
 
 }
 
-class tokenManager @Inject constructor() {
+class TokenManager @Inject constructor() {
     fun getToken(): String = "HOLAWEON"
 }

@@ -3,7 +3,7 @@ package com.example.horoscapp.ui.detail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.horoscapp.domain.model.HoroscopeModel
-import com.example.horoscapp.domain.model.usecase.GetPredictionUseCase
+import com.example.horoscapp.domain.usecase.GetPredictionUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

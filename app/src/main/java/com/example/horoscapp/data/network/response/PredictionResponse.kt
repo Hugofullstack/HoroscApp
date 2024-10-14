@@ -1,4 +1,4 @@
-package com.example.horoscapp.data.providers.network.response
+package com.example.horoscapp.data.network.response
 
 import com.example.horoscapp.domain.model.PredictionModel
 import com.google.gson.annotations.SerializedName

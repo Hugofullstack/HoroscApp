@@ -1,9 +1,9 @@
-package com.example.horoscapp.data.providers.network
+package com.example.horoscapp.data.network
 
-import com.example.horoscapp.data.providers.RepositoryImpl
-import com.example.horoscapp.data.providers.core.interceptors.AuthInterceptor
-import com.example.horoscapp.domain.model.Repository
 import com.example.horoscapp.BuildConfig.BASE_URL
+import com.example.horoscapp.data.RepositoryImpl
+import com.example.horoscapp.data.core.interceptors.AuthInterceptor
+import com.example.horoscapp.domain.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,6 +31,7 @@ object NetworkModule {
     @Singleton
     fun provideOkHttpClient(authInterceptor: AuthInterceptor):OkHttpClient{
         val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+
        return OkHttpClient
            .Builder()
            .addInterceptor(interceptor)
@@ -44,7 +45,7 @@ object NetworkModule {
       return  retrofit.create(HoroscopeApiService::class.java)
     }
     @Provides
-    fun provideRepository(apiService: HoroscopeApiService):Repository{
+    fun provideRepository(apiService: HoroscopeApiService): Repository {
         return RepositoryImpl(apiService)
     }
 }

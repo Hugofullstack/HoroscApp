@@ -1,5 +1,6 @@
 package com.example.horoscapp.ui.horoscope.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ class HoroscopeAdapter(private var horoscopeList: List<HoroscopeInfo> = emptyLis
     private val onItemSelected:(HoroscopeInfo)-> Unit) :
     RecyclerView.Adapter<HoroscopeViewHolder>() {
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateList(list: List<HoroscopeInfo>) {
         horoscopeList = list
         notifyDataSetChanged()

@@ -35,6 +35,7 @@ class HoroscopeDetailActivity : AppCompatActivity() {
         initUIState()
     }
 
+    @Suppress("DEPRECATION")
     private fun initListeners() {
         binding.ivBack.setOnClickListener { onBackPressed() }
     }

@@ -9,16 +9,16 @@ plugins {
 
 android {
     namespace = "com.example.horoscapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.horoscapp"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.horoscapp.CustomTestRunner"
     }
 
     buildTypes {
@@ -30,14 +30,14 @@ android {
                 "proguard-rules.pro"
             )
 
-            resValue("string","HugoName","HoroscApp")
+            resValue("string","app_name","HoroscApp")
 
             buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
         getByName("debug"){
             isDebuggable = true
-            resValue("string", "HugoName", "[DEBUG] HoroscApp")
-            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
+            resValue("string", "app_name", "[DEBUG] HoroscApp")
+            buildConfigField("String", "BASE_URL",  "\"https://newastro.vercel.app/\"")
         }
     }
     compileOptions {
@@ -50,6 +50,9 @@ android {
     buildFeatures{
         viewBinding = true
         buildConfig = true
+    }
+    kotlin {
+        jvmToolchain(21)
     }
 }
 
