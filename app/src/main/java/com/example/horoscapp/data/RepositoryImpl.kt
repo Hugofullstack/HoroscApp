@@ -14,4 +14,5 @@ class RepositoryImpl @Inject constructor(private val apiService: HoroscopeApiSer
             .onFailure { Log.i("hola", "Ha ocurrido un error ${it.message}") }
         return null
     }
+
 }

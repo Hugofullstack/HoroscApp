@@ -35,8 +35,8 @@ android {
             buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
         getByName("debug"){
-            isDebuggable = true
-            resValue("string", "app_name", "[DEBUG] HoroscApp")
+            isDebuggable = false
+            resValue("string", "app_name", "HoroscApp")
             buildConfigField("String", "BASE_URL",  "\"https://newastro.vercel.app/\"")
         }
     }
@@ -59,7 +59,7 @@ android {
 dependencies {
 
 
-    val cameraVersion = "1.3.4"
+    implementation(libs.androidx.runner)
 
     //NavComponent
     implementation(libs.androidx.navigation.fragment.ktx)
@@ -75,11 +75,11 @@ dependencies {
     implementation (libs.logging.interceptor)
 
     //Camera X
-    implementation ("androidx.camera:camera-core:${cameraVersion}")
-    implementation ("androidx.camera:camera-camera2:${cameraVersion}")
-    implementation ("androidx.camera:camera-lifecycle:${cameraVersion}")
-    implementation ("androidx.camera:camera-view:${cameraVersion}")
-    implementation ("androidx.camera:camera-extensions:${cameraVersion}")
+    implementation (libs.androidx.camera.core)
+    implementation (libs.androidx.camera.camera2)
+    implementation (libs.androidx.camera.lifecycle)
+    implementation (libs.androidx.camera.view)
+    implementation (libs.androidx.camera.extensions)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -100,4 +100,6 @@ dependencies {
     androidTestImplementation (libs.dagger.hilt.android.testing)
     androidTestImplementation (libs.androidx.fragment.testing)
     kaptAndroidTest(libs.hilt.android.compiler.v248)
+
+
 }
