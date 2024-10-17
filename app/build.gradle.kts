@@ -86,7 +86,18 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    //UnitTesting
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation (libs.kotlintest.runner.junit5)
+    testImplementation (libs.mockk)
+
+    //UITesting
+    androidTestImplementation(libs.androidx.junit.v115)
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation (libs.androidx.espresso.intents)
+    androidTestImplementation (libs.dagger.hilt.android.testing)
+    androidTestImplementation (libs.androidx.fragment.testing)
+    kaptAndroidTest(libs.hilt.android.compiler.v248)
 }
